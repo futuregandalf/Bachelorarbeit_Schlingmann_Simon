@@ -38,3 +38,7 @@ Hinweise zur Funktionalität / Benutzung
 - Soll ein geschlossenes Polygon erstellt werden statt einer Kette, so kann durch strg+Mausklick die letzte, schließende Kante gezogen werden.
 
 - Die grafische Oberfläche stellt den Punkt (0,0) in der oberen linken Ecke dar. Wegen des Verfahrens zur Findung der inneren Kanten muss für frei erstellte Punktmengen der erste Punkt höher liegen als der zweite, um von Anfang an alle Innenkanten zu generieren.
+
+- Das Schema zur Vergabe der Delays ist für geladene Punktmengen nach Abstand zum Polygonschwerpunkt eingestellt, für freie Punktmengen nach Reihenfolge. Eine Änderung kann im Code in der Klasse SampleController im den Methoden load bzw. handleOnMouseClicked vorgenommen werden, es sind ein paar weiter möglichkeiten auskommentiert hinterlegt.
+
+- Die tatsächlichen Laufzeiten des Codes weichen teilweise von den theoretischen Laufzeiten der genutzten Verfahren nach oben hin ab, jedoch in für die Praxis unerheblichem Maße.
