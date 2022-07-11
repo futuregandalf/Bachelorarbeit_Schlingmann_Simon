@@ -28,7 +28,7 @@ Hinweise zur Funktionalität / Benutzung
 
 - Das Einlesen von Punktmengen erfolgt über .txt Dateien, die pro Zeile einen Punkt darstellen. Es sind also pro Zeile eine X- und eine Y-Koordinate als double Werte anzugeben.
 
-- Die grafische Fläche verfügt über keine Skalierung. Die Punkte sollten sich für anschauliche Ergebnisse zwischen Werten von 200. bis 1000. befinden, mit 
+- Die grafische Fläche verfügt über keine Skalierung. Die Punkte sollten sich für anschauliche Ergebnisse zwischen Werten von 200.0 bis 1000.0 befinden, mit 
   für diesen Zahlrenraum ausreichend großen Abständen.
   
 - Eingelesene Punktmengen werden standardmäßig als Polygon interpretiert. Soll Eine Kette eingelesen werden, so muss in der letzten Zeile der .txt datei ein 'k' eingefügt werden.  
