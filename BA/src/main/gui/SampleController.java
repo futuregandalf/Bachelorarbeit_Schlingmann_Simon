@@ -61,39 +61,20 @@ public class SampleController {
 
     Builder graphs;
     Group lines = new Group();
-    Group ccenters = new Group();
-    //ArrayList<Line> edges = new ArrayList<Line>();
     Group delEdges = new Group();
     Group pathEdges = new Group();
     Group matchingEdges = new Group();
-    Group points = new Group();
-    Group mstEdges = new Group();
-    Group globalMst = new Group();
-    Group tspEdges = new Group();
-    Group finalTsp = new Group();
-    Group higherOrderEdges = new Group();
     Group polLines = new Group();
     Group labels = new Group();
-    public int test = 10;
-    boolean tourmod = false;
-    boolean kantenmod = false;
-    ArrayList<LinienSegment> finalTour = new ArrayList<LinienSegment>();
     ArrayList<double[][]> globalTspPerfect = new ArrayList<double[][]>();
-    List<LinkedList<Punkt>> globalTspMst = new ArrayList<LinkedList<Punkt>>();
-    ArrayList<LinienSegment> globalerMst = new ArrayList<LinienSegment>();
-    List<List<Point>> globalCluster = new ArrayList<List<Point>>();
-    ArrayList <Punkt> trav = new ArrayList<Punkt>();
     ArrayList<LinienSegment> polEdges = new ArrayList<LinienSegment>();
 
-    double toursize;
     @FXML
     public void initialize() {																	//initialisiert Das Feld
 
 
         world.setBackground(new Background(new BackgroundFill(Color.WHITE, null, null)));
-        world.getChildren().clear();															//löscht vorher eventuell vorhandene Punktmenge
-        //delEdges.setScaleX(1);
-        //delEdges.setScaleX(1);
+        world.getChildren().clear();
         graphs = new Builder(world, 0);
 
 
@@ -147,7 +128,7 @@ public class SampleController {
 
                     }
                     Point p = new Point(world);
-                    p.setPos(x, y);        // stern_acht: 6 , sechsech: 60 , stern_sechs: 100
+                    p.setPos(x, y);
                     graphs.punkte.add(p);
                     graphs.draw();
 
@@ -158,7 +139,7 @@ public class SampleController {
             } catch (FileNotFoundException e) {
 
                 e.printStackTrace();
-                System.out.println("Datei nicht gefunden oder Koordinaten ung�ltig.");
+                System.out.println("Datei nicht gefunden oder Koordinaten ungültig.");
             }
 
             Scanner scanner2;
@@ -452,7 +433,7 @@ public class SampleController {
 
         }
 
-        else if (event.isControlDown() == true) {
+        else if (event.isControlDown() == true) {                                   //erzeugt die schließende letzte Kante
                 //world.getChildren().remove(labels);
                 //labels.getChildren().clear();
                 if (graphs.punkte.size() > 2) {
@@ -555,40 +536,21 @@ public class SampleController {
 
     @FXML
     public void clear() {	//Alle Punkte löschen, liste leeren
-        world.getChildren().remove(higherOrderEdges);
-        higherOrderEdges.getChildren().clear();
+
         world.getChildren().clear();
+        world.getChildren().remove(labels);
+        labels.getChildren().clear();
         lines.getChildren().clear();
-        ccenters.getChildren().clear();
         graphs.punkte.clear();
         delEdges.getChildren().clear();
-        globalMst.getChildren().clear();
-        finalTour.clear();
         lines.getChildren().clear();
         delEdges.getChildren().clear();
-        //edges.clear();
-        globalerMst.clear();
-        trav.clear();
-        finalTour.clear();
         globalTspPerfect.clear();
-        globalTspMst.clear();
-        globalerMst.clear();
-        globalCluster.clear();
-        trav.clear();
         polEdges.clear();
-        world.getChildren().remove(higherOrderEdges);
-        higherOrderEdges.getChildren().clear();
         lines.getChildren().clear();
         world.getChildren().remove(lines);
-        ccenters.getChildren().clear();
-        world.getChildren().remove(ccenters);
         delEdges.getChildren().clear();
         world.getChildren().remove(delEdges);
-        globalMst.getChildren().clear();
-        world.getChildren().remove(globalMst);
-        finalTour.clear();
-        finalTsp.getChildren().clear();
-        world.getChildren().remove(finalTsp);
         world.getChildren().remove(matchingEdges);
         matchingEdges.getChildren().clear();
 
